@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Raw2Real</title>
+  <meta charset="UTF-8" />
+  <title>Raw2Real - Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Welcome to Raw2Real Website!</h1>
-  <p>This is our first live webpage.</p>
+
+  <header>
+    <h1>Raw2Real</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="work.html">Our Work</a>
+      <a href="#inquiry">Inquiry</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>About Us</h2>
+    <p>We are a creative team: <strong>Kishan, Shivam, and Rohit</strong>. We create stylish video ads just like your favorite brands on Instagram — clean edits, bold stories, and real impact.</p>
+  </section>
+
+  <section id="inquiry">
+    <h2>Inquiry & Pricing</h2>
+
+    <div style="margin-bottom: 20px;">
+      <h3>🎬 Video Pricing:</h3>
+      <ul>
+        <li><strong>Basic Ad Video:</strong> ₹3,000</li>
+        <li><strong>Premium Brand Video:</strong> ₹7,500+</li>
+        <li><strong>UGC Reel (per video):</strong> ₹1,200</li>
+      </ul>
+    </div>
+
+    <form action="https://formspree.io/f/xeokzjyr" method="POST">
+      <h3>Send us a message:</h3>
+      <input type="text" name="name" placeholder="Your Name" required><br><br>
+      <input type="email" name="email" placeholder="Your Email" required><br><br>
+      <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea><br><br>
+      <button type="submit">Send Inquiry</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:raw2real@agency.com">raw2real@agency.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/raw2real" target="_blank">@raw2real</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Raw2Real. Built for creators, by creators.
+  </footer>
+
 </body>
 </html>

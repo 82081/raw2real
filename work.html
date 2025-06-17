@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Raw2Real – Our Work</title>
+  <link rel="stylesheet" href="work-style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1 class="fade-in">Raw2Real</h1>
+    <nav class="fade-in">
+      <a href="index.html">Home</a>
+      <a href="work.html">Our Work</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <p class="fade-in">We turn raw ideas into real impact through powerful video ads.</p>
+  </header>
+
+  <section>
+    <h2 class="fade-in">Our Video Projects</h2>
+    <div class="portfolio-items">
+      <div class="item fade-in">
+        <h3>Product Ad</h3>
+        <video controls class="video-box">
+          <source src="ad1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item fade-in">
+        <h3>Brand Story</h3>
+        <video controls class="video-box">
+          <source src="ad2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <footer class="fade-in">
+    <p>&copy; 2025 Raw2Real. All rights reserved.</p>
+  </footer>
+
+  <script>
+    gsap.from(".fade-in", {
+      duration: 1,
+      y: 50,
+      opacity: 0,
+      stagger: 0.3,
+      ease: "power2.out"
+    });
+  </script>
+</body>
+</html>

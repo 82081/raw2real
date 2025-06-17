@@ -1,0 +1,114 @@
+/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* Header/Navbar */
+header {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #262626;
+}
+
+/* Section styling */
+section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+section p, section ul {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Form styling */
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #009fda;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #999;
+  border-top: 1px solid #dbdbdb;
+}
