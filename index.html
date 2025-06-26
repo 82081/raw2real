@@ -2,56 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Raw2Real - Home</title>
+  <title>Raw2Real - Animated UI</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-
   <header>
     <h1>Raw2Real</h1>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="#" data-target="home">Home</a>
+      <a href="#" data-target="inquiry">Inquiry</a>
+      <a href="#" data-target="contact">Contact</a>
       <a href="work.html">Our Work</a>
-      <a href="#inquiry">Inquiry</a>
-      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>We are a creative team: <strong>Kishan, Shivam, and Rohit</strong>. We create stylish video ads just like your favorite brands on Instagram — clean edits, bold stories, and real impact.</p>
-  </section>
+  <main>
+    <!-- Our Process -->
+<section id="process" class="tab extra">
+  <h2>Our Creative Process</h2>
+  <ol>
+    <li><strong>1. Briefing:</strong> You tell us your idea and target audience.</li>
+    <li><strong>2. Scripting:</strong> We craft a short, punchy script.</li>
+    <li><strong>3. Shooting:</strong> We record, style, and animate.</li>
+    <li><strong>4. Editing:</strong> Sleek transitions, subtitles, branding.</li>
+    <li><strong>5. Delivery:</strong> Formats optimized for Instagram, YouTube, etc.</li>
+  </ol>
+</section>
 
-  <section id="inquiry">
-    <h2>Inquiry & Pricing</h2>
+<!-- Brands Worked With -->
+<section id="brands" class="tab extra">
+  <h2>Brands We've Collaborated With</h2>
+  <div class="brands">
+    <img src="https://via.placeholder.com/120x60?text=Brand+1" alt="Brand 1">
+    <img src="https://via.placeholder.com/120x60?text=Brand+2" alt="Brand 2">
+    <img src="https://via.placeholder.com/120x60?text=Brand+3" alt="Brand 3">
+  </div>
+</section>
 
-    <div style="margin-bottom: 20px;">
-      <h3>🎬 Video Pricing:</h3>
+<!-- Trust Guarantees -->
+<section id="guarantee" class="tab extra">
+  <h2>What We Promise</h2>
+  <ul>
+    <li>✅ 100% Original Content</li>
+    <li>🚀 Delivery in 3–5 Business Days</li>
+    <li>💬 Fast Client Communication</li>
+    <li>🔄 2 Free Revisions</li>
+  </ul>
+</section>
+
+<!-- Final CTA -->
+<section id="cta" class="tab extra">
+  <h2>Ready to Go Viral?</h2>
+  <p>Let’s turn your product or idea into a stunning, scroll-stopping video ad.</p>
+  <a href="#" data-target="inquiry" class="btn">Get Started</a>
+</section>
+
+    <section id="home" class="tab active">
+      <h2>Welcome to Raw2Real</h2>
+      <p><strong>Kishan, Shivam, and Rohit</strong> create high-impact video ads that bring your brand to life. We blend storytelling and digital strategy to make your reels unforgettable.</p>
+    </section>
+
+    <section id="inquiry" class="tab">
+      <h2>Inquiry & Pricing</h2>
       <ul>
         <li><strong>Basic Ad Video:</strong> ₹3,000</li>
         <li><strong>Premium Brand Video:</strong> ₹7,500+</li>
-        <li><strong>UGC Reel (per video):</strong> ₹1,200</li>
+        <li><strong>UGC Reel:</strong> ₹1,200</li>
       </ul>
-    </div>
+      <form>
+        <input type="text" placeholder="Your Name" required><br><br>
+        <input type="email" placeholder="Your Email" required><br><br>
+        <textarea placeholder="Tell us what you need..." required></textarea><br><br>
+        <button type="submit" class="btn">Send Inquiry</button>
+      </form>
+    </section>
 
-    <form action="https://formspree.io/f/xeokzjyr" method="POST">
-      <h3>Send us a message:</h3>
-      <input type="text" name="name" placeholder="Your Name" required><br><br>
-      <input type="email" name="email" placeholder="Your Email" required><br><br>
-      <textarea name="message" rows="5" placeholder="Tell us what you need..." required></textarea><br><br>
-      <button type="submit">Send Inquiry</button>
-    </form>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:raw2real@agency.com">raw2real@agency.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/raw2real" target="_blank">@raw2real</a></p>
-  </section>
+    <section id="contact" class="tab">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:raw2real@agency.com">raw2real@agency.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/raw2real" target="_blank">@raw2real</a></p>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 Raw2Real. Built for creators, by creators.
   </footer>
 
+  <script>
+    const links = document.querySelectorAll("nav a[data-target]");
+    const tabs = document.querySelectorAll(".tab");
+    let activeTab = document.querySelector(".tab.active");
+
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const targetId = link.dataset.target;
+        const nextTab = document.getElementById(targetId);
+
+        if (nextTab === activeTab) return;
+
+        // Animate current tab out
+        gsap.to(activeTab, {
+          opacity: 0,
+          x: -100,
+          scale: 0.95,
+          duration: 0.4,
+          ease: "power1.in",
+          onComplete: () => {
+            activeTab.classList.remove("active");
+            activeTab.style.display = "none";
+
+            // Animate new tab in
+            nextTab.style.display = "block";
+            gsap.fromTo(nextTab,
+              { opacity: 0, x: 100, scale: 0.95 },
+              {
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                duration: 0.6,
+                ease: "power3.out"
+              }
+            );
+            nextTab.classList.add("active");
+            activeTab = nextTab;
+          }
+        });
+      });
+    });
+
+    // Initial state
+    tabs.forEach(tab => {
+      if (!tab.classList.contains("active")) tab.style.display = "none";
+    });
+  </script>
 </body>
 </html>
